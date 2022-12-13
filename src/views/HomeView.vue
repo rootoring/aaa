@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+      <CategoryList />   
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import CategoryList from '@/components/CategoryList.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    CategoryList
+  },
+  computed:{
+    aa(){
+      return JSON.parse( localStorage.getItem('city'))
+    }
   }
 }
 </script>
